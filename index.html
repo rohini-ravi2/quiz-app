@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+
+    <!-- Firebase Config -->
+    <script>
+      // ✅ Replace with your actual Firebase project config:
+      const firebaseConfig = {
+  apiKey: "AIzaSyCqyIphYe7-iAJXaP2uO7d0fEb-Royjk14",
+  authDomain: "quiz-f18ef.firebaseapp.com",
+  databaseURL: "https://quiz-f18ef-default-rtdb.firebaseio.com",
+  projectId: "quiz-f18ef",
+  storageBucket: "quiz-f18ef.firebasestorage.app",
+  messagingSenderId: "658077707336",
+  appId: "1:658077707336:web:d165dfd373b484bed33c7d",
+  measurementId: "G-JF34G743QG"
+};
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Start Screen -->
+      <div class="screen active" id="start-screen">
+        <h1>How Well Do You Know Me? 🎉</h1>
+        <p>Let's find out!😄</p>
+        <input type="text" id="username" placeholder="Enter your name" required />
+        <button id="start-btn">Start</button>
+      </div>
+
+      <!-- Quiz Screen -->
+      <div class="screen" id="quiz-screen">
+        <div class="quiz-header">
+          <h2 id="question-text">Question goes here</h2>
+          <div class="quiz-info">
+            <p>Question <span id="current-question">1</span> of <span id="total-questions">10</span></p>
+            <p>Score: <span id="score">0</span></p>
+          </div>
+        </div>
+        <div id="answers-container" class="answers-container"></div>
+        <div class="progress-bar">
+          <div id="progress" class="progress"></div>
+        </div>
+      </div>
+
+      <!-- Result Screen -->
+      <div id="result-screen" class="screen">
+        <h1>Quiz Results</h1>
+        <div class="result-info">
+          <p>You scored <span id="final-score">0</span> out of <span id="max-score">10</span></p>
+          <div id="result-message">Good job!</div>
+        </div>
+        <button id="restart-btn">Restart</button>
+      </div>
+    </div>
+
+    <!-- Main JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
